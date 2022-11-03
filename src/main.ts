@@ -39,6 +39,9 @@ async function checkWalletBalanceAndAppendResult(): Promise<void> {
 
   if (balance > ethers.BigNumber.from(0)) {
     appendFile(wallet, balance);
+    console.info('address: ' + wallet.address);
+    console.info('private key: ' + wallet.privateKey);
+    console.info('balance: ' + balance.toNumber());
     logSplit();
   } else {
     console.log('NONE');
