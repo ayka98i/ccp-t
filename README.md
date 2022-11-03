@@ -4,6 +4,7 @@ $ npm install
 ```
 
 # Edit env file
+Create .env in project root directory.
 ```dotenv
 # Ethereum node's rpc address
 RPC_ADDR=
