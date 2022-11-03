@@ -18,5 +18,5 @@ DURATION_SECONDS=
 
 # Run
 ```shell
-$ ts-node src/main.ts
+$ npx ts-node src/main.ts
 ```

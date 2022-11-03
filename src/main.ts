@@ -44,7 +44,7 @@ async function checkWalletBalanceAndAppendResult(): Promise<void> {
     console.info('balance: ' + balance.toNumber());
     logSplit();
   } else {
-    console.log('NONE');
+    console.info('NONE');
     logSplit();
   }
 }
