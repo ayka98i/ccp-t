@@ -7,6 +7,7 @@ import { setTimeout } from 'timers/promises';
 import { Config, getConfig } from './config';
 
 async function main() {
+  console.info('running...');
   await executeGetRiches(getConfig());
 }
 
@@ -42,9 +43,6 @@ async function checkWalletBalanceAndAppendResult(): Promise<void> {
     console.info('address: ' + wallet.address);
     console.info('private key: ' + wallet.privateKey);
     console.info('balance: ' + balance.toNumber());
-    logSplit();
-  } else {
-    console.info('NONE');
     logSplit();
   }
 }
