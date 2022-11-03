@@ -7,8 +7,7 @@ export function createAccount(): ethers.Wallet {
   return ethers.Wallet.createRandom();
 }
 
-export async function checkBalance(wallet: ethers.Wallet): Promise<ethers.BigNumber> {
-  wallet.connect(provider);
-  console.log('connect');
-  return await wallet.getBalance();
+export async function getBalance(wallet: ethers.Wallet): Promise<ethers.BigNumber> {
+  const connectedWallet = wallet.connect(provider);
+  return connectedWallet.getBalance();
 }

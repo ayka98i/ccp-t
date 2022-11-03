@@ -1,22 +1,22 @@
 import process from 'process';
 import * as O from 'fp-ts/Option';
 
-type Config = Readonly<{
+export type Config = Readonly<{
   rpcAddr: string;
-  confirmationLimit: number;
+  executionCount: number;
   durationSeconds: number;
 }>;
 
-function getConfig(): Config {
+export function getConfig(): Config {
   const env = process.env;
   const optRpcAddr: O.Option<string> = O.fromNullable(env.RPC_ADDR);
-  const optConfirmationLimit: O.Option<string> = O.fromNullable(env.CONFIRMATION_LIMIT);
+  const optExecutionCount: O.Option<string> = O.fromNullable(env.EXECUTION_COUNT);
   const optDurationSeconds: O.Option<string> = O.fromNullable(env.DURATION_SECONDS);
 
-  if (O.isSome(optRpcAddr) && O.isSome(optConfirmationLimit) && O.isSome(optDurationSeconds)) {
+  if (O.isSome(optRpcAddr) && O.isSome(optExecutionCount) && O.isSome(optDurationSeconds)) {
     return {
       rpcAddr: optRpcAddr.value,
-      confirmationLimit: Number(optConfirmationLimit.value),
+      executionCount: Number(optExecutionCount.value),
       durationSeconds: Number(optDurationSeconds.value)
     };
   } else {
